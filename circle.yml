@@ -12,9 +12,6 @@ test:
     - mkdir -p HelloWorld/www
     - cp index.html HelloWorld/www
     - cp page2.html HelloWorld/www
-    - cd HelloWorld
-    - cordova platform add android@5.0.0
-    - cordova plugin add cordova-plugin-crosswalk-webview
+    - cd HelloWorld && cordova platform add android@5.0.0 && cordova plugin add cordova-plugin-crosswalk-webview
   override:
-    - cordova build android
-    - cp -r platforms/android/build/outputs $CIRCLE_ARTIFACTS
+    - cd HelloWorld && cordova build android && cp -r platforms/android/build/outputs $CIRCLE_ARTIFACTS

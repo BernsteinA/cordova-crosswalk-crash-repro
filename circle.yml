@@ -11,6 +11,7 @@ test:
     - mkdir -p app/www
     - cp index.html app/www
     - cp page2.html app/www
+    - cp audiocheck.net_PinkNoise_15min.mp3 app/www/test.mp3
     - cd app && cordova platform add android@5.0.0 && cordova plugin add cordova-plugin-crosswalk-webview && cordova plugin add cordova-plugin-media@2.0.0 && cordova plugin add cordova-plugin-device && cordova plugin add cordova-plugin-device-motion && cordova plugin add cordova-plugin-device-orientation && cordova plugin add cordova-plugin-file-transfer && cordova plugin add cordova-plugin-splashscreen && cordova plugin add cordova-plugin-whitelist && cordova plugin add cordova-plugin-network-information && cordova plugin add cordova-plugin-vibration && cordova plugin add cordova-plugin-geolocation && cordova plugin add cordova-plugin-webserver && cordova plugin add cordova-custom-config && cordova plugin add com.telerik.plugins.wkwebview
   override:
     - cd app && cordova prepare && cordova build android

@@ -3,7 +3,6 @@ machine:
     ANDROID_NDK_HOME: $ANDROID_NDK
     NODE_ENV: test
     PATH: $PATH:$HOME/$CIRCLE_PROJECT_REPONAME/node_modules/.bin
-dependencies:
 test:
   pre:
     - echo y | android update sdk --no-ui --all --filter "addon-google_apis-google-22, sys-img-armeabi-v7a-addon-google_apis-google-22"

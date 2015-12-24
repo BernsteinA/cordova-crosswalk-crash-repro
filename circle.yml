@@ -11,7 +11,7 @@ test:
     - mkdir -p app/www
     - cp index.html app/www
     - cp page2.html app/www
-    - cd app && cordova platform add android@5.0.0 && cordova plugin add cordova-plugin-crosswalk-webview && cordova plugin add cordova-plugin-media@4.0.0
+    - cd app && cordova platform add android@5.0.0 && cordova plugin add cordova-plugin-crosswalk-webview && cordova plugin add cordova-plugin-media@2.0.0
   override:
     - cd app && cordova build android
 #    - cd app && cordova run android

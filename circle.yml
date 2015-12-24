@@ -14,5 +14,8 @@ test:
     - cd app && cordova platform add android@5.0.0 && cordova plugin add cordova-plugin-crosswalk-webview
   override:
     - cd app && cordova build android
+#    - cd app && cordova run android
+#    - circle-android wait-for-boot
+#    - adb logcat -d > $CIRCLE_ARTIFACTS/logcat.txt
   post:
-    - cp -r app $CIRCLE_ARTIFACTS
+    - cp -r app/platforms/android/build $CIRCLE_ARTIFACTS

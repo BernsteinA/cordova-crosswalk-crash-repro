@@ -4,6 +4,10 @@
 <script src="cordova.js"></script>
 <script>
 document.addEventListener('deviceready', function() {
+    var my_media = new Media("test.mp3");
+    my_media.play();
+    my_media.stop();
+    my_media.release();
     window.location = 'index.html';
 });
 </script>

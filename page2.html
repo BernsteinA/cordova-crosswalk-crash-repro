@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src * blob:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
 <script src="cordova.js"></script>
 <script>
 document.addEventListener('deviceready', function() {
-    var my_media = new Media("test.mp3");
+    navigator.splashscreen.hide()
+    var my_media = new Media(cordova.file.applicationDirectory+"www/test.mp3");
     my_media.play();
     my_media.stop();
     my_media.release();
-    window.location = 'index.html';
 });
 </script>
 </head>

@@ -12,7 +12,7 @@ test:
     - rm -rf HelloWorld/www
     - mkdir -p HelloWorld/www
     - cp index.html HelloWorld/www
-    - cp index2.html HelloWorld/www
+    - cp page2.html HelloWorld/www
     - cd HelloWorld
     - cordova platform add android@5.0.0
     - cordova plugin add cordova-plugin-crosswalk-webview

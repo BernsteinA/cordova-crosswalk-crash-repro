@@ -11,12 +11,8 @@ test:
     - mkdir -p app/www
     - cp index.html app/www
     - cp page2.html app/www
-    - ls
-    - cd app
-    - ls
-    - cordova platform add android@5.0.0
-    - cordova plugin add cordova-plugin-crosswalk-webview
+    - cd app && cordova platform add android@5.0.0 && cordova plugin add cordova-plugin-crosswalk-webview
   override:
-    - cordova build android
+    - cd app && cordova build android
   post:
-    - cp -r platforms/android/build/outputs $CIRCLE_ARTIFACTS
+    - cp -r app $CIRCLE_ARTIFACTS

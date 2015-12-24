@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src * blob:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
 <script src="cordova.js"></script>
 <script>
 document.addEventListener('deviceready', function() {
@@ -9,7 +10,7 @@ document.addEventListener('deviceready', function() {
     my_media.play();
     my_media.stop();
     my_media.release();
-    window.location = 'page2.html';
+    // window.location = 'page2.html';
 });
 </script>
 </head>

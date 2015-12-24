@@ -1,0 +1,21 @@
+machine:
+  environment:
+    ANDROID_NDK_HOME: $ANDROID_NDK
+    NODE_ENV: test
+    PATH: $PATH:$HOME/$CIRCLE_PROJECT_REPONAME/node_modules/.bin
+dependencies:
+test:
+  pre:
+    - echo y | android update sdk --no-ui --all --filter "addon-google_apis-google-22, sys-img-armeabi-v7a-addon-google_apis-google-22"
+    - npm install -g cordova
+    - cordova create com.example.helloworld HelloWorld
+    - rm -rf HelloWorld/www
+    - mkdir -p HelloWorld/www
+    - cp index.html HelloWorld/www
+    - cp index2.html HelloWorld/www
+    - cd HelloWorld
+    - cordova platform add android@5.0.0
+    - cordova plugin add cordova-plugin-crosswalk-webview
+  override:
+    - cordova build android
+    - cp -r platforms/android/build/outputs $CIRCLE_ARTIFACTS
